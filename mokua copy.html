@@ -28,24 +28,6 @@
     <div class="result" id="mathResult">数学运算结果将显示在这里</div>
     <div class="result" id="greetingResult">问候语将显示在这里</div>
 
-    <script type="module">
-        import { add, subtract, PI} from './js/math.js';
-
-        import sayHello,{ sayGoodbye } from './js/greeting.js';
-
-        const mathResult = document.getElementById('mathResult');
-        mathResult.innerHTML = `<h3>数学运算结果</h3>
-        <p>3 + 5 = ${add(3, 5)}</p>
-        <p>3 - 3 = ${subtract(5, 3)}</p>
-        <p>圆周率 = ${PI}</p>
-        `
-        const greetingResult = document.getElementById('greetingResult');
-        greetingResult.innerHTML = `
-        <h3>问候结果</h3>
-        <p>${sayHello('小明')}</p>
-        <p>${sayGoodbye('小美')}</p>
-        `;
-    </script>
 </body>
 
 </html>

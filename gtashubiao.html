@@ -6,10 +6,10 @@
     <title>Document</title>
     <style>
         body{
-            background: black;
+            background: #000;
             height: 100vh;
             overflow: hidden;
-            color: white;
+            color: #fff;
             margin: 0;
             padding: 0;
         }
@@ -22,42 +22,40 @@
             align-items: center;
             justify-content: center;
             font-size: 12vw;
-            background: url("./img/gta.png") no-repeat center/cover;
+            background: url("./img/QQ图片20250526151944.png") no-repeat center/cover;
             background-clip: text;
             color: transparent;
-            transform: font-size 0.3s ease;
+            transition: font-size 0.3s ease;
         }
     </style>
 </head>
 <body>
     <h1 id="title">AHIHT</h1>
     <script>
-        const title = document.getElementById("title");
-        let currrentSize = 12;
+        const title = document.getElementById('title');
+        let currentSize = 12;
         const minSize = 5;
         const maxSize = 390;
 
         function getStep(size) {
-            if (size < 20) return 2;
-            if (size < 50) return 5;
-            if (size < 100) return 10;
-            if (size < 200) return 20;
-            if (size < 300) return 30;
+            if(size<20) return 2;
+            if(size<50) return 5;
+            if(size<100) return 10;
+            if(size<200) return 20;
+            if(size<300) return 30;
             return 100;
         }
 
-        window.addEventListener("wheel", function (e) { 
+        window.addEventListener("wheel", function(e) {
             e.preventDefault();
 
-            const step = getStep(currrentSize);
-
-            if (e.deltaY < 0) {
-                currrentSize = Math.min(currrentSize + step, maxSize);
-            } else (
-                currrentSize = Math.max(currrentSize - step, minSize)
-            )
-
-            title.style.fontSize = currrentSize + "vw";
+            const step = getStep(currentSize);
+            if(e.deltaY < 0) {
+                currentSize = Math.min(currentSize + step, maxSize);
+            } else {
+                currentSize = Math.max(currentSize - step, minSize);
+            }
+            title.style.fontSize = currentSize + "vw";
         })
     </script>
 </body>
